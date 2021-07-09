@@ -40,9 +40,10 @@ jobs:
     #    dest: nfive.zip
 
     - name: Move files to artifact folder
+      shell: pwsh
       run: |
-        mkdir Build
-        move README.md LICENSE "*.dll" nfive.yml nfive.lock fxmanifest.lua index.html config Build
+        mkdir Build        
+        Move-Item -Path README.md\,LICENSE,*.dll,nfive.yml,nfive.lock,fxmanifest.lua,index.html,config -Destination Build
 
     - name: Attach Zip as build artifact
       uses: actions/upload-artifact@v1
