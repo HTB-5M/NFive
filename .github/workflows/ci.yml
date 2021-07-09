@@ -33,14 +33,19 @@ jobs:
     - name: List root folder contents
       run: dir
 
-    - name: Zip the release
-      uses: papeloto/action-zip@v1
-      with:
-        files: README.md LICENSE *.dll nfive.yml nfive.lock fxmanifest.lua index.html config/
-        dest: nfive.zip
+    #- name: Zip the release
+    #  uses: papeloto/action-zip@v1
+    #  with:
+    #    files: README.md LICENSE *.dll nfive.yml nfive.lock fxmanifest.lua index.html config/
+    #    dest: nfive.zip
+
+    - name: Move files to artifact folder
+      run: |
+        mkdir Build
+        move README.md LICENSE *.dll nfive.yml nfive.lock fxmanifest.lua index.html config Build
 
     - name: Attach Zip as build artifact
       uses: actions/upload-artifact@v1
       with:
         name: nfive
-        path: .\nfive.zip
+        path: .\Build
