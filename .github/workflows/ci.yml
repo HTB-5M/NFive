@@ -30,6 +30,9 @@ jobs:
     - name: Build the solution
       run: msbuild NFive.sln /p:Configuration=Release
 
+    - name: List root folder contents
+      run: dir
+
     - name: Zip the release
       uses: papeloto/action-zip@v1
       with:
