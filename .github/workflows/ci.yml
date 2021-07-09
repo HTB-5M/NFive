@@ -30,8 +30,8 @@ jobs:
     - name: Build the solution
       run: msbuild NFive.sln /p:Configuration=Release
 
-    - name: List root folder contents
-      run: dir
+    #- name: List root folder contents
+    #  run: dir
 
     #- name: Zip the release
     #  uses: papeloto/action-zip@v1
@@ -42,7 +42,7 @@ jobs:
     - name: Move files to artifact folder
       run: |
         mkdir Build
-        move README.md LICENSE *.dll nfive.yml nfive.lock fxmanifest.lua index.html config Build
+        move README.md LICENSE "*.dll" nfive.yml nfive.lock fxmanifest.lua index.html config Build
 
     - name: Attach Zip as build artifact
       uses: actions/upload-artifact@v1
