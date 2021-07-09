@@ -28,6 +28,6 @@ jobs:
       run: nuget restore NFive.sln
 
     - name: Build the solution
-      run: msbuild NFive.sln
+      run: msbuild NFive.sln /p:Configuration=Release
 
 
