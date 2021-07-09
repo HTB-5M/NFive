@@ -44,8 +44,9 @@ jobs:
     - name: Move files to artifact folder
       shell: pwsh
       run: |
+        cd D:\a\HTB-5M\NFive
         mkdir Build        
-        Move-Item -Path README.md\,LICENSE,*.dll,nfive.yml,nfive.lock,fxmanifest.lua,index.html,config -Destination Build
+        Move-Item -Path README.md,LICENSE,*.dll,nfive.yml,nfive.lock,fxmanifest.lua,index.html,config -Destination Build
 
     - name: Attach Zip as build artifact
       uses: actions/upload-artifact@v1
