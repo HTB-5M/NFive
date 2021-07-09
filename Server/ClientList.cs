@@ -27,7 +27,7 @@ namespace NFive.Server
 
 			comms.Event(SessionEvents.ClientInitialized).FromServer().On<IClient, Session>(OnInitialized);
 			comms.Event(SessionEvents.ClientDisconnected).FromServer().On<IClient, Session>(OnDisconnected);
-		
+		}
 
 		private void OnInitialized(ICommunicationMessage e, IClient client, Session session)
 		{
