@@ -39,6 +39,8 @@ jobs:
     #    files: README.md LICENSE *.dll nfive.yml nfive.lock fxmanifest.lua index.html config/
     #    dest: nfive.zip
 
+    - run: echo ${{ github.workspace }}
+
     - name: Move files to artifact folder
       shell: pwsh
       run: |
