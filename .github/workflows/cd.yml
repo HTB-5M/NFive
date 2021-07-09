@@ -3,3 +3,10 @@ name: Release
 on:
   pull_request:
     branches: [ main ]
+
+jobs:
+  Release:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - run: echo Snoogans
