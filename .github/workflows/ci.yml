@@ -35,10 +35,10 @@ jobs:
       with:
         files: README.md LICENSE *.dll nfive.yml nfive.lock fxmanifest.lua index.html config/
         recursive: false
-        dest: ${{ github.workspace }}\nfive.zip
+        dest: nfive.zip
 
     - name: Attach Zip as build artifact
       uses: actions/upload-artifact@v1
       with:
         name: my-artifact
-        path: ${{ github.workspace }}\nfive.zip
+        path: nfive.zip
