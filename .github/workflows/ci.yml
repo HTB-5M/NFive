@@ -64,6 +64,6 @@ jobs:
       - name: Attach Zip as build artifact
         uses: actions/upload-artifact@v1
         with:
-          name: nfive_$SEMVER
+          name: nfive_${{ SEMVER }}
           path: Build
 
