@@ -43,7 +43,7 @@ jobs:
     steps:
       - name: Display version
         run: |
-          echo SemVer: $SEMVER
+          echo $SEMVER
 
       #- uses: actions/checkout@v2
 
