@@ -34,16 +34,16 @@ jobs:
         useConfigFile: true
         configFilePath: ./GitVersion.yml
 
-  #build:
-  #  runs-on: windows-latest
-  #  needs: calculate-version
-  #  env:
-  #    SEMVER: ${{ needs.calculate-version.outputs.semVer }}
+  build:
+    runs-on: windows-latest
+    needs: calculate-version
+    env:
+      SEMVER: ${{ needs.calculate-version.outputs.semVer }}
 
-  #  steps:
-  #    - name: Display version
-  #      run: |
-  #        echo SemVer: $SEMVER
+    steps:
+      - name: Display version
+        run: |
+          echo SemVer: $SEMVER
 
       #- uses: actions/checkout@v2
 
